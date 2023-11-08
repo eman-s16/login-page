@@ -1,0 +1,51 @@
+<img alt="wave" class="wave" src="./assets/images/wave.png">
+<div class="container">
+  <div class="img">
+    <img alt="" src="./assets/images/bg.svg">
+  </div>
+  <div class="login-content">
+    <form action="">
+
+      <img alt="avatar" src="./assets/images/avatar.svg">
+      <h2 class=" m-0">Sign In</h2>
+      <p class="mb-2">Please enter your Username and Password!</p>
+      <div class="form-outline mb-4">
+        <p-messages [(value)]="msgs"></p-messages>
+      </div>
+      <div class="input-div one">
+        <div class="i">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+
+          <input type="text" class="input" placeholder="User Name" [ngModelOptions]="{ standalone: true }"
+            [(ngModel)]="username" />
+        </div>
+
+      </div>
+      <small class="p-error" *ngIf="submitted && username.trim() === ''">Username is
+        required.</small>
+      <div class="input-div pass">
+        <div class="i">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+
+          <input type="password" class="input" placeholder="Password" [ngModelOptions]="{ standalone: true }"
+            [(ngModel)]="password" />
+
+        </div>
+
+
+
+      </div>
+
+      <small class="p-error" *ngIf="submitted && password.trim() === ''">Password is
+        required.</small>
+
+
+      <input type="submit" (click)="onSubmit()" class="btn mt-4" value="Login">
+
+    </form>
+  </div>
+</div>
